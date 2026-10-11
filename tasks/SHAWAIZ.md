@@ -238,3 +238,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 
 16:01 · S1 · `lib/strings.ts` (bilingual labels), Card, RulePill, StatusIcon, NumberField, VersionBanner.
 16:12 · S2 · `lib/rules/rulebook.ts`, `verifyQuote` + 8 tests; vitest config renamed to `.mts` (ESM warning).
+16:42 · S0 fix · lockfile regenerated (missing @emnapi entries broke `npm ci`); `typecheck` runs `next typegen` first (Fahad requests).
