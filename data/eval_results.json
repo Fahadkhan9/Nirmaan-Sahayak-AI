@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-10-11T11:15:58.656Z",
+  "rulesVersion": "MP Bhumi Vikas Rules 2012, consolidated to 6 March 2025",
+  "model": null,
+  "totals": {
+    "engine": {
+      "ok": 16,
+      "of": 16
+    },
+    "ask": {
+      "skipped": "ANTHROPIC_API_KEY is not set"
+    }
+  },
+  "engine": [
+    {
+      "id": "e1",
+      "note": "street exactly 9 m",
+      "check": "front",
+      "expected": "requiredM 3",
+      "got": "requiredM 3",
+      "ok": true
+    },
+    {
+      "id": "e2",
+      "note": "street 9.1 m",
+      "check": "front",
+      "expected": "requiredM 3.6",
+      "got": "requiredM 3.6",
+      "ok": true
+    },
+    {
+      "id": "e3",
+      "note": "street 18 m",
+      "check": "front",
+      "expected": "requiredM 4.5",
+      "got": "requiredM 4.5",
+      "ok": true
+    },
+    {
+      "id": "e4",
+      "note": "plot exactly 150",
+      "check": "rear",
+      "expected": "requiredM 1.5",
+      "got": "requiredM 1.5",
+      "ok": true
+    },
+    {
+      "id": "e5",
+      "note": "plot 150.5",
+      "check": "rear",
+      "expected": "requiredM 2.5",
+      "got": "requiredM 2.5",
+      "ok": true
+    },
+    {
+      "id": "e6",
+      "note": "plot 225",
+      "check": "rear",
+      "expected": "requiredM 2.5",
+      "got": "requiredM 2.5",
+      "ok": true
+    },
+    {
+      "id": "e7",
+      "note": "plot 40",
+      "check": "rear",
+      "expected": "requiredM 0",
+      "got": "requiredM 0",
+      "ok": true
+    },
+    {
+      "id": "e8",
+      "note": "built-up 75: slab 750 + application 75",
+      "check": "fee",
+      "expected": "Rs 825",
+      "got": "Rs 825",
+      "ok": true
+    },
+    {
+      "id": "e9",
+      "note": "built-up 75.5 (gap, continuous reading): slab 1,250 + application 76",
+      "check": "fee",
+      "expected": "Rs 1326",
+      "got": "Rs 1326",
+      "ok": true
+    },
+    {
+      "id": "e10",
+      "note": "built-up 200: slab 2,000 + application 200",
+      "check": "fee",
+      "expected": "Rs 2200",
+      "got": "Rs 2200",
+      "ok": true
+    },
+    {
+      "id": "e11",
+      "note": "built-up 2600: slab 50,000 + application 2,600",
+      "check": "fee",
+      "expected": "Rs 52600",
+      "got": "Rs 52600",
+      "ok": true
+    },
+    {
+      "id": "e12",
+      "note": "semi, h10, frontage 10 -> 2.5",
+      "check": "side",
+      "expected": "requiredM 2.5",
+      "got": "requiredM 2.5",
+      "ok": true
+    },
+    {
+      "id": "e13",
+      "note": "semi, h10.5 -> 3.0",
+      "check": "side",
+      "expected": "requiredM 3",
+      "got": "requiredM 3",
+      "ok": true
+    },
+    {
+      "id": "e14",
+      "note": "height 13 -> warn Rule 42",
+      "check": "height",
+      "expected": "status warn",
+      "got": "status warn",
+      "ok": true
+    },
+    {
+      "id": "e15",
+      "note": "plot 300 -> amendment warn",
+      "check": "amendment",
+      "expected": "status warn",
+      "got": "status warn",
+      "ok": true
+    },
+    {
+      "id": "e16",
+      "note": "demo case: 200 sqm, rear 1.5 -> fail",
+      "check": "rear",
+      "expected": "status fail",
+      "got": "status fail",
+      "ok": true
+    }
+  ],
+  "ask": []
+}

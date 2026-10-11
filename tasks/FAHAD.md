@@ -85,7 +85,7 @@ Tests in `lib/engine/engine.test.ts`:
 Kruti Dev font by `tools/kd2u.py`. Some pages (for example p.36 fee table) have conversion errors in numbers,
 so this is for display only.
 
-- [ ] F2 done
+- [x] F2 done
 
 ## F3. Eval script (T+33 to T+43)
 
@@ -101,7 +101,7 @@ via `tsx --env-file=.env scripts/eval.ts`):
 4. Write `data/eval_results.json` with per-case results and a timestamp.
 Run calls one after another (not in parallel) to avoid rate limits.
 
-- [ ] F3 done
+- [x] F3 done (script ready; real Ask numbers need S3 + `.env`, then rerun `npm run eval`)
 
 ## F4. README, LICENSE, viva notes (T+43 to T+55)
 
@@ -168,6 +168,15 @@ F1 decisions:
   small, otherwise `info`.
 - DECISION: high-rise (> 30 m) fee is a `warn` with no `amountRs`, because the 21(3)(c) rates are not in the tables.
 
+F3 decisions:
+- DECISION: `scripts/eval.ts` loads `.env` with Node's built-in `process.loadEnvFile` (Node 24), so no dotenv
+  package and no `package.json` change. `npm run eval` works as is.
+- DECISION: the eval loads `lib/ai/pipeline.ts` with a dynamic import, so it typechecks and runs the engine
+  part before S3 lands. With no key or no pipeline, the Ask part is skipped with the reason, in the output
+  and in `eval_results.json`.
+- DECISION: an Ask case that throws or returns `error` counts as a miss for found/not-found and rule.
+  Verified quotes are scored only for answers that were found (V/W, W = number found).
+
 ## Done log
 
 (time · task · one line)
@@ -175,3 +184,5 @@ F1 decisions:
 16:09 · F0 · checked tables.json and eval_cases.json against rules text: numbers OK, 3 engine decisions logged
 16:20 · F0 · re-checked against the official PDF in docs/: all numbers and 32 quotes match their pages
 16:25 · F1 · rules engine: 7 checks + tables/lookup/ref/text helpers, 32 tests passing, demo case matches S5
+16:36 · F2 · getHindiPage: page -> Hindi text lookup (null if missing) + 3 tests
+16:46 · F3 · eval script: engine 16/16, Ask part scored and tested with a fake pipeline; writes data/eval_results.json
