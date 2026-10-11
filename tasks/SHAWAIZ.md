@@ -80,7 +80,7 @@ Total budget about 60 minutes. Times are targets, not limits. If a task overruns
 - `lib/rules/verify.test.ts`: one true case (a row from `data/tables.json`), one false case (made-up text),
   one "wrong rule id" case.
 
-- [ ] S2 done
+- [x] S2 done
 
 ## S3. Claude pipeline (T+22 to T+35)
 
@@ -237,3 +237,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 (time · task · one line)
 
 16:01 · S1 · `lib/strings.ts` (bilingual labels), Card, RulePill, StatusIcon, NumberField, VersionBanner.
+16:12 · S2 · `lib/rules/rulebook.ts`, `verifyQuote` + 8 tests; vitest config renamed to `.mts` (ESM warning).
