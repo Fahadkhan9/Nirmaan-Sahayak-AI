@@ -38,6 +38,7 @@ Env vars (`.env.example` lists them):
 - `ANTHROPIC_API_KEY` (required for Ask; engine works without it)
 - `ANTHROPIC_MODEL` (default `claude-sonnet-5-5`)
 - `ACCESS_CODE` (optional; if empty, no access gate)
+- `ACCESS_DEMO_FILL` (optional; `true` shows a "Fill demo code" button on `/access`, which sends the code to the browser)
 - `DATABASE_URL` (optional; if empty, history is off)
 
 ## 4. Architecture rules
