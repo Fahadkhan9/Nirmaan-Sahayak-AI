@@ -117,6 +117,11 @@ export const strings = {
     notAvailable: { hi: "इस पृष्ठ का हिंदी पाठ उपलब्ध नहीं", en: "Hindi text not available for this page" },
     loading: { hi: "लोड हो रहा है…", en: "Loading…" },
   },
+  access: {
+    title: { hi: "प्रवेश कोड", en: "Access code" },
+    submit: { hi: "प्रवेश करें", en: "Enter" },
+    wrong: { hi: "कोड गलत है", en: "Wrong code" },
+  },
   errors: {
     noAiKey: {
       hi: "AI सेट नहीं है। फ़ॉर्म सीधे भरें, जाँच फिर भी चलेगी।",

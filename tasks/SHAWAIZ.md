@@ -181,7 +181,7 @@ Client components in `components/workspace/`:
 Else, if cookie `ns_access` !== `ACCESS_CODE`, redirect to `/access`. `app/access/page.tsx` (server) with a
 small client form calling a server action that sets the cookie (httpOnly, sameSite lax, 12 h) and redirects to `/`.
 
-- [ ] S6 done
+- [x] S6 done
 
 ## S7. Hindi official text (should, 5 min, needs Fahad's F3)
 
@@ -246,3 +246,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 16:47 · S3 · Claude pipeline: extract + answer (rulebook cached), runAsk, askAction, 10 tests. Not live-tested (no key here).
 16:47 · S7 · `getHindiPageAction(page)` server action (validates page, one page per call).
 16:49 · S4 · Workspace UI: ask box, plan form, summary tiles, sorted check list, quote block + Hindi text, answer card; light theme.
+16:50 · S6 · Access code: `proxy.ts` (Next 16 name for middleware), /access page, httpOnly 12 h cookie. Tested with and without ACCESS_CODE.
