@@ -136,6 +136,7 @@ export const strings = {
     title: { hi: "प्रवेश कोड", en: "Access code" },
     submit: { hi: "प्रवेश करें", en: "Enter" },
     wrong: { hi: "कोड गलत है", en: "Wrong code" },
+    fillDemo: { hi: "डेमो कोड भरें", en: "Fill demo code" },
   },
   errors: {
     noAiKey: {
