@@ -111,6 +111,17 @@ export const strings = {
       en: "200 sq m plot, 9 m road, rear 1.5 m, what is the fee?",
     },
   },
+  examples: {
+    label: { hi: "उदाहरण", en: "Try" },
+    items: [
+      {
+        label: { hi: "योजना जाँच", en: "Plan check" },
+        text: "200 वर्ग मीटर प्लॉट, 9 मीटर सड़क, अर्ध-पृथक, ऊंचाई 9 मीटर, आगे 3 मीटर, पीछे 1.5 मीटर, साइड 3 मीटर, निर्मित क्षेत्र 180 वर्ग मीटर, फीस कितनी?",
+      },
+      { label: { hi: "नियम प्रश्न", en: "Rule question" }, text: "15 मीटर ऊंची इमारत में लिफ्ट ज़रूरी है क्या?" },
+      { label: { hi: "नियम में नहीं", en: "Not in rules" }, text: "How do I pay my property tax online?" },
+    ],
+  },
   hindiText: {
     summary: { hi: "आधिकारिक हिंदी पाठ", en: "Official Hindi text" },
     autoConverted: { hi: "स्वतः परिवर्तित, PDF से मिलाएँ", en: "Auto-converted, check the PDF" },
@@ -125,6 +136,7 @@ export const strings = {
     title: { hi: "प्रवेश कोड", en: "Access code" },
     submit: { hi: "प्रवेश करें", en: "Enter" },
     wrong: { hi: "कोड गलत है", en: "Wrong code" },
+    fillDemo: { hi: "डेमो कोड भरें", en: "Fill demo code" },
   },
   errors: {
     noAiKey: {

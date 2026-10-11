@@ -248,3 +248,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 16:49 · S4 · Workspace UI: ask box, plan form, summary tiles, sorted check list, quote block + Hindi text, answer card; light theme.
 16:50 · S6 · Access code: `proxy.ts` (Next 16 name for middleware), /access page, httpOnly 12 h cookie. Tested with and without ACCESS_CODE.
 16:50 · S8 · Print slip: button + NS-yyyymmdd-hhmmss reference on paper; input box and buttons hidden in print.
+19:59 · Demo · Try buttons in ask box, Fill demo code on /access (ACCESS_DEMO_FILL), DEMO.md with live-checked sentences.
