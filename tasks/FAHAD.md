@@ -110,7 +110,7 @@ Run calls one after another (not in parallel) to avoid rate limits.
   Keep "What works / what doesn't" honest.
 - Read `VIVA.md` with Shawaiz. Fix anything that no longer matches what you built.
 
-- [ ] F4 done
+- [ ] F4 (LICENSE, README and VIVA updated with real eval numbers; VIVA read-through with Shawaiz still to do)
 
 ## F5. Demo and submit (T+50 to T+60, together)
 
@@ -125,6 +125,10 @@ Run calls one after another (not in parallel) to avoid rate limits.
 ## Requests to the other side
 
 (write here, then tell Shawaiz out loud)
+
+- FYI (no change needed unless you want it): for plan-style questions ("10 m street, how much front gap?")
+  extract returns `question: null` on purpose, so only the engine answers. The eval now credits these when the
+  engine's number matches (q1, q10, q14). If you'd rather also show a text answer, that's a prompt change in yours.
 
 - `package-lock.json` is out of sync with `package.json` (`npm ci` fails: missing `@emnapi/runtime` and
   `@emnapi/core` 1.11.3). Please run `npm install` and commit the lock. I used `npm install --no-package-lock`.
@@ -177,6 +181,14 @@ F3 decisions:
 - DECISION: an Ask case that throws or returns `error` counts as a miss for found/not-found and rule.
   Verified quotes are scored only for answers that were found (V/W, W = number found).
 
+F4 decisions:
+- DECISION: README says Neon history is not built (it said "stores checks"), because S9 was not done.
+- DECISION: the eval credits plan-style questions answered by the rules engine (`scripts/eval/engine-answer.ts`)
+  when a check's required gap equals `expectValue` and its quote passes `verifyQuote`, because that is what the
+  clerk sees on screen. Fahad chose this over changing the S3 prompt. Output shows "answered by AI X, engine Y".
+- DECISION: VIVA says "structured output" instead of "tool calling", and about 70k tokens instead of 58k,
+  to match S3 and the real rulebook size.
+
 ## Done log
 
 (time · task · one line)
@@ -186,3 +198,4 @@ F3 decisions:
 16:25 · F1 · rules engine: 7 checks + tables/lookup/ref/text helpers, 32 tests passing, demo case matches S5
 16:36 · F2 · getHindiPage: page -> Hindi text lookup (null if missing) + 3 tests
 16:46 · F3 · eval script: engine 16/16, Ask part scored and tested with a fake pipeline; writes data/eval_results.json
+17:05 · F4 · LICENSE (MIT), README filled (eval 16/16, 17/17, 15/15, 14/15; engine-answered plan questions credited), VIVA matched to the built app

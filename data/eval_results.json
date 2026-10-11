@@ -1,14 +1,29 @@
 {
-  "timestamp": "2026-10-11T11:15:58.656Z",
+  "timestamp": "2026-10-11T11:37:56.508Z",
   "rulesVersion": "MP Bhumi Vikas Rules 2012, consolidated to 6 March 2025",
-  "model": null,
+  "model": "claude-sonnet-5-5",
   "totals": {
     "engine": {
       "ok": 16,
       "of": 16
     },
     "ask": {
-      "skipped": "ANTHROPIC_API_KEY is not set"
+      "foundNotFound": {
+        "ok": 17,
+        "of": 17
+      },
+      "rule": {
+        "ok": 15,
+        "of": 15
+      },
+      "verified": {
+        "ok": 14,
+        "of": 15
+      },
+      "answeredBy": {
+        "ai": 12,
+        "engine": 3
+      }
     }
   },
   "engine": [
@@ -141,5 +156,364 @@
       "ok": true
     }
   ],
-  "ask": []
+  "ask": [
+    {
+      "id": "q1",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "56"
+      ],
+      "kind": "both",
+      "answeredBy": "engine",
+      "found": true,
+      "ruleId": "56",
+      "rule": "56(1)(a)",
+      "page": 77,
+      "verified": true,
+      "answer": "engine: front needs 3.6 m",
+      "error": null,
+      "ms": 2837,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q2",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "17"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "17",
+      "rule": "17(a)",
+      "page": 34,
+      "verified": true,
+      "answer": "In an area designated for agricultural use, a Farm House needs a minimum plot size of 0.40 hectare. The maximum F.A.R. is 0.10. The Authority may also impose other conditions.",
+      "error": null,
+      "ms": 5075,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q3",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "23"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "23",
+      "rule": "23(2)",
+      "page": 41,
+      "verified": true,
+      "answer": "Development permission under Section 30 stays valid for three years. If it expires, it can be revalidated for two consecutive terms of one year each, after which proposals must be submitted afresh. If execution of the project begins during the validity, the permission does not lapse and no revalidation is required.",
+      "error": null,
+      "ms": 5057,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q4",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "28"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "28",
+      "rule": "28",
+      "page": 48,
+      "verified": true,
+      "answer": "If the Authority does not intimate its refusal in writing within the period in sub-section (5) of Section 30 of the Act, the permission is deemed sanctioned. However, this does not authorise anything contrary to the Act, Rules, Development Plan, lease terms or other law. Deemed sanction does not apply if the application was with an authorised Architect/Structural Engineer; lapse of time there does not mean permission is granted.",
+      "error": null,
+      "ms": 4778,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q5",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "52"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "52",
+      "rule": "52(1)(a)",
+      "page": 69,
+      "verified": true,
+      "answer": "A building (including a verandah or balcony) must stay at least 2.5 meters vertically and 1.2 meters horizontally from low and medium voltage lines and service lines. If the applicable Electricity Rules require more, the larger distance applies. No balcony may be built or added that violates this.",
+      "error": null,
+      "ms": 3850,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q6",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "18",
+        "26"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "26",
+      "rule": "26(9)(A)(a)",
+      "page": 45,
+      "verified": true,
+      "answer": "It depends on the professional's licence. An Architect registered with the Council can submit all plans and information for permission of all buildings irrespective of size and height. Structural Engineers, Engineers and Supervisors have narrower limits on plot size and storeys, and plans must also be signed by the owner/applicant.",
+      "error": null,
+      "ms": 4675,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q7",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "16",
+        "14"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "16",
+      "rule": "16(1)(b)",
+      "page": 26,
+      "verified": true,
+      "answer": "An application for building permission (Appendix A-2) must be accompanied by the application fee, Key Plan, Site Plans, the Sub Division/Layout Plan approved under section 30, Building Plans, Service Plans and a Project Report. It also needs proof of ownership or legal right in the site, proof of authorisation by the owner if the applicant is not the owner, parking plans with calculations, and the supervision certificate. Rule 14(2) additionally requires a certificate from the Structural Engineer/Architect/Engineer/Supervisor that Rule 88 (earthquake-prone areas) has been complied with. This is based on the rulebook and is not legal advice.",
+      "error": null,
+      "ms": 5881,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q8",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "21"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "21",
+      "rule": "21(3)(b)",
+      "page": 36,
+      "verified": true,
+      "answer": "Under Rule 21, the application fee for building permission is Rs 1.00 per square meter of proposed built-up area. The permission fee for a residential building (other than high rise) depends on built-up area, e.g. Rs 750 up to 75 sq.m., Rs 2,000 for 126-200 sq.m., Rs 3,000 for 201-300 sq.m., up to Rs 50,000 above 2500 sq.m. For a high rise residential building it is Rs. 10.00 per square meter of built up area. This is a summary of the rulebook, not legal advice.",
+      "error": null,
+      "ms": 5565,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q9",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "24",
+        "19"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "24",
+      "rule": "24(1)",
+      "page": 41,
+      "verified": true,
+      "answer": "Some changes are allowed, but not all. Rule 24 bars deviation from the sanctioned plan if it affects the front Marginal Open Space, exceeds 30% of the permissible FAR, relates to the parking area or public utility space, or falls on road land or a water body. For an addition or alteration in the proposed plan, up to 10% needs a Rs. 500 fee, and above 10% needs a fresh application. This is a reading of the rulebook, not legal advice.",
+      "error": null,
+      "ms": 5072,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q10",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "56"
+      ],
+      "kind": "both",
+      "answeredBy": "engine",
+      "found": true,
+      "ruleId": "56",
+      "rule": "56(2)(a)",
+      "page": 78,
+      "verified": true,
+      "answer": "engine: rear needs 1.5 m",
+      "error": null,
+      "ms": 2285,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q11",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "2",
+        "12"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "12",
+      "rule": "12(3)",
+      "page": 20,
+      "verified": true,
+      "answer": "Rule 12(3) requires both development permission and building permission only where building activities involve development of land as a composite building scheme. The rulebook does not directly address a single 300 sq m plot in an approved layout. For such a plot the building permission application under Rule 14 appears to be what applies, but please confirm with the Development Plan and your supervisor. This is not legal advice.",
+      "error": null,
+      "ms": 10813,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q12",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "103"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "103",
+      "rule": "103",
+      "page": 107,
+      "verified": true,
+      "answer": "Rule 103 says the norms and regulations in the relevant development plan apply in the plan area. If the development plan differs from or contradicts these rules, the Director examines it and sends a proposal to the Government, whose decision is final and becomes an integral part of the Development Plan.",
+      "error": null,
+      "ms": 5043,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q13",
+      "lang": "en",
+      "expectFound": true,
+      "acceptRules": [
+        "83",
+        "42"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "83",
+      "rule": "83",
+      "page": 95,
+      "verified": false,
+      "answer": "Provision for lifts must be made for any building more than 12.5 meters in height, so a 15 m building is covered. Planning, design, installation, operation, maintenance and inspection must follow Section 5 of Part-VIII of the NBC. Owners must also furnish lift details with the building permission application, register the lift, insure it and submit six-monthly safety and audit reports signed by a Lift Engineer.",
+      "error": null,
+      "ms": 5225,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": false
+    },
+    {
+      "id": "q14",
+      "lang": "hi",
+      "expectFound": true,
+      "acceptRules": [
+        "56"
+      ],
+      "kind": "both",
+      "answeredBy": "engine",
+      "found": true,
+      "ruleId": "56",
+      "rule": "56(1)(a)",
+      "page": 77,
+      "verified": true,
+      "answer": "engine: front needs 3 m",
+      "error": null,
+      "ms": 2185,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q15",
+      "lang": "hi",
+      "expectFound": true,
+      "acceptRules": [
+        "21"
+      ],
+      "kind": "question",
+      "answeredBy": "ai",
+      "found": true,
+      "ruleId": "21",
+      "rule": "21(2)(ii)",
+      "page": 35,
+      "verified": true,
+      "answer": "भवन अनुज्ञा के लिए आवेदन शुल्क प्रस्तावित निर्मित क्षेत्र का Rs 1.00 प्रति वर्ग मीटर है, जो वापस नहीं होता। इसके अलावा अनुज्ञा जारी होने से पहले अनुज्ञा शुल्क देना होता है, जो भवन के प्रकार और निर्मित क्षेत्र पर निर्भर है (जैसे आवासीय 0-75 वर्ग मीटर पर Rs 750)। यह नियम 21 में लिखा है।",
+      "error": null,
+      "ms": 5591,
+      "foundOk": true,
+      "ruleOk": true,
+      "verifiedOk": true
+    },
+    {
+      "id": "q16",
+      "lang": "en",
+      "expectFound": false,
+      "acceptRules": [],
+      "kind": "question",
+      "answeredBy": null,
+      "found": false,
+      "ruleId": null,
+      "rule": null,
+      "page": null,
+      "verified": null,
+      "answer": "The rulebook does not cover how to pay property tax online, so I cannot answer this from it.",
+      "error": null,
+      "ms": 4870,
+      "foundOk": true,
+      "ruleOk": null,
+      "verifiedOk": null
+    },
+    {
+      "id": "q17",
+      "lang": "en",
+      "expectFound": false,
+      "acceptRules": [],
+      "kind": "question",
+      "answeredBy": null,
+      "found": false,
+      "ruleId": null,
+      "rule": null,
+      "page": null,
+      "verified": null,
+      "answer": "The rulebook does not contain any market rate for land in Kolar Road or anywhere else in Bhopal, so I cannot answer this from it.",
+      "error": null,
+      "ms": 4460,
+      "foundOk": true,
+      "ruleOk": null,
+      "verifiedOk": null
+    }
+  ]
 }

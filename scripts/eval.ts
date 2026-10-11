@@ -34,7 +34,7 @@ async function main(): Promise<void> {
         ask.map((a) => ({
           id: a.id,
           expect: a.expectFound ? `found ${a.acceptRules.join("/")}` : "not found",
-          got: a.error ? `error: ${a.error.slice(0, 40)}` : a.found ? `found ${a.rule} p.${a.page}` : "not found",
+          got: a.error ? `error: ${a.error.slice(0, 40)}` : a.found ? `${a.answeredBy} ${a.rule} p.${a.page}` : "not found",
           found: a.foundOk ? "ok" : "MISS",
           rule: a.ruleOk === null ? "" : a.ruleOk ? "ok" : "MISS",
           verified: a.verifiedOk === null ? "" : a.verifiedOk ? "ok" : "NO",
@@ -46,6 +46,8 @@ async function main(): Promise<void> {
   const found = count(ask.map((a) => a.foundOk));
   const rule = count(ask.map((a) => a.ruleOk));
   const verified = count(ask.map((a) => a.verifiedOk));
+  const byAi = ask.filter((a) => a.answeredBy === "ai").length;
+  const byEngine = ask.filter((a) => a.answeredBy === "engine").length;
 
   console.log("\nTotals");
   console.log(`  engine            ${engineScore.ok}/${engineScore.of}`);
@@ -54,6 +56,7 @@ async function main(): Promise<void> {
     console.log(`  found/not-found   ${found.ok}/${ask.length}`);
     console.log(`  rule              ${rule.ok}/${rule.of}`);
     console.log(`  verified quotes   ${verified.ok}/${verified.of}`);
+    console.log(`  answered by       AI ${byAi}, rules engine ${byEngine}`);
   }
 
   const out = path.join(root, "data", "eval_results.json");
@@ -65,7 +68,7 @@ async function main(): Promise<void> {
       engine: engineScore,
       ask: askSkipped
         ? { skipped: askSkipped }
-        : { foundNotFound: { ok: found.ok, of: ask.length }, rule, verified },
+        : { foundNotFound: { ok: found.ok, of: ask.length }, rule, verified, answeredBy: { ai: byAi, engine: byEngine } },
     },
     engine,
     ask,

@@ -1,5 +1,6 @@
 import evalCases from "@/data/eval_cases.json";
 import type { AskResult } from "@/lib/types";
+import { engineAnswer } from "./engine-answer";
 
 type RunAsk = (text: string) => Promise<AskResult>;
 
@@ -8,6 +9,8 @@ export interface AskCaseResult {
   lang: string;
   expectFound: boolean;
   acceptRules: string[];
+  kind: AskResult["kind"];
+  answeredBy: "ai" | "engine" | null;
   found: boolean;
   ruleId: string | null;
   rule: string | null;
@@ -47,19 +50,23 @@ export async function runAskCases(runAsk: RunAsk): Promise<AskCaseResult[]> {
     }
     const ms = Date.now() - start;
     const a = res.answer;
-    const found = a?.found === true;
-    const ref = found ? a?.ref : undefined;
+    const byAi = a?.found === true;
+    const byEngine = !byAi && !res.error ? engineAnswer(res.fields, c.expectValue) : null;
+    const found = byAi || byEngine !== null;
+    const ref = byAi ? a?.ref : byEngine?.ref;
     const r: AskCaseResult = {
       id: c.id,
       lang: c.lang,
       expectFound: c.expectFound,
       acceptRules: c.acceptRules,
+      kind: res.kind,
+      answeredBy: byAi ? "ai" : byEngine ? "engine" : null,
       found,
       ruleId: ref?.ruleId ?? null,
       rule: ref?.rule ?? null,
       page: ref?.page ?? null,
       verified: ref?.verified ?? null,
-      answer: a?.answer ?? null,
+      answer: byEngine ? byEngine.text : (a?.answer ?? null),
       error: res.error ?? null,
       ms,
       foundOk: !res.error && found === c.expectFound,
