@@ -196,7 +196,7 @@ Never send the whole Hindi JSON to the browser.
 with reference ID (`NS-` + yyyymmdd-hhmmss), the inputs, the checklist, rules version, and
 "Guidance only. The officer decides."
 
-- [ ] S8 done
+- [x] S8 done
 
 ## S9. Neon history (stretch, only if S5 to S8 are done)
 
@@ -247,3 +247,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 16:47 · S7 · `getHindiPageAction(page)` server action (validates page, one page per call).
 16:49 · S4 · Workspace UI: ask box, plan form, summary tiles, sorted check list, quote block + Hindi text, answer card; light theme.
 16:50 · S6 · Access code: `proxy.ts` (Next 16 name for middleware), /access page, httpOnly 12 h cookie. Tested with and without ACCESS_CODE.
+16:50 · S8 · Print slip: button + NS-yyyymmdd-hhmmss reference on paper; input box and buttons hidden in print.

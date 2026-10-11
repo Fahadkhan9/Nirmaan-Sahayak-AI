@@ -117,6 +117,10 @@ export const strings = {
     notAvailable: { hi: "इस पृष्ठ का हिंदी पाठ उपलब्ध नहीं", en: "Hindi text not available for this page" },
     loading: { hi: "लोड हो रहा है…", en: "Loading…" },
   },
+  print: {
+    button: { hi: "पर्ची छापें", en: "Print slip" },
+    reference: { hi: "संदर्भ", en: "Reference" },
+  },
   access: {
     title: { hi: "प्रवेश कोड", en: "Access code" },
     submit: { hi: "प्रवेश करें", en: "Enter" },

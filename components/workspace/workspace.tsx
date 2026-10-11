@@ -10,6 +10,7 @@ import { AskBox } from "./ask-box";
 import { CheckList } from "./check-list";
 import { CheckSummary } from "./check-summary";
 import { PlanForm } from "./plan-form";
+import { PrintSlip } from "./print-slip";
 
 export function Workspace() {
   const [text, setText] = useState("");
@@ -47,6 +48,7 @@ export function Workspace() {
         pending={pending}
         error={ask?.error}
       />
+      <PrintSlip />
       {ask?.answer && <AnswerCard answer={ask.answer} />}
       <div className="grid gap-6 lg:grid-cols-2">
         <PlanForm fields={fields} onChange={setFields} missing={ask?.missing ?? []} />
