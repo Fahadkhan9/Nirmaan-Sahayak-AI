@@ -238,39 +238,39 @@
     },
     {
       "id": "e8",
-      "note": "built-up 75",
+      "note": "built-up 75: slab 750 + application 75",
       "input": {
         "builtUpArea": 75
       },
       "check": "fee",
-      "expectFeeRs": 750
+      "expectFeeRs": 825
     },
     {
       "id": "e9",
-      "note": "built-up 75.5 (gap, continuous reading)",
+      "note": "built-up 75.5 (gap, continuous reading): slab 1,250 + application 76",
       "input": {
         "builtUpArea": 75.5
       },
       "check": "fee",
-      "expectFeeRs": 1250
+      "expectFeeRs": 1326
     },
     {
       "id": "e10",
-      "note": "built-up 200",
+      "note": "built-up 200: slab 2,000 + application 200",
       "input": {
         "builtUpArea": 200
       },
       "check": "fee",
-      "expectFeeRs": 2000
+      "expectFeeRs": 2200
     },
     {
       "id": "e11",
-      "note": "built-up 2600",
+      "note": "built-up 2600: slab 50,000 + application 2,600",
       "input": {
         "builtUpArea": 2600
       },
       "check": "fee",
-      "expectFeeRs": 50000
+      "expectFeeRs": 52600
     },
     {
       "id": "e12",

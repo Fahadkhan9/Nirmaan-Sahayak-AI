@@ -18,7 +18,7 @@ and check every number in `data/tables.json` against these pages:
 All quotes in `tables.json` were already machine-checked against the rules text. You are checking the numbers
 and the meaning. Write any problem under "Decisions" below. Also skim `data/eval_cases.json` expected answers.
 
-- [ ] F0 done
+- [x] F0 done
 
 ## F1. Rules engine (T+10 to T+30)
 
@@ -76,7 +76,7 @@ Tests in `lib/engine/engine.test.ts`:
   every check returns refs with a non-empty quote (except missing).
 - `npm test` must pass before you push.
 
-- [ ] F1 done
+- [x] F1 done
 
 ## F2. Hindi page lookup (T+30 to T+33)
 
@@ -126,10 +126,52 @@ Run calls one after another (not in parallel) to avoid rate limits.
 
 (write here, then tell Shawaiz out loud)
 
+- `package-lock.json` is out of sync with `package.json` (`npm ci` fails: missing `@emnapi/runtime` and
+  `@emnapi/core` 1.11.3). Please run `npm install` and commit the lock. I used `npm install --no-package-lock`.
+- `npm run typecheck` fails on a fresh clone (`LayoutProps` not found in `app/layout.tsx`) until Next
+  generates its route types. Suggest `"typecheck": "next typegen && tsc --noEmit"`.
+
 ## Decisions
 
 (DECISION: what changed, because why)
 
+F0 findings. I checked against the official PDF `docs/bvn06032025E.pdf` (PDF page numbers = printed
+page numbers). Every number in `tables.json` matches pages 3, 35, 36, 70, 77 and 78, and all 32 quotes
+appear word for word on the page they cite. Notes on meaning:
+- DECISION: fee detail will say "residential only; shops, commercial and shops-cum-residence add 50%
+  (Rule 21(3)(b) items 2 and 4)" instead of "other uses have different rates", because items 3 and 6
+  (factory admin block, social/educational) use the same slabs as item 1.
+- DECISION: fee check adds a `warn` note when `height > 30`, because the 21(3)(b) slabs exclude
+  high-rise buildings (Rule 2(38): more than 10 storeys or more than 30 m), which follow 21(3)(c).
+- DECISION: front check adds a note when `streetWidth < 6`, because Rule 56(1)(b) says that in existing
+  developed areas the building line is 6.0 m from the street centre line. The engine does not check this.
+- The fee slabs are printed as whole numbers (0-75, 76-125, ...). `assumption` (continuous reading)
+  covers the gaps. Keep it visible in the fee detail.
+- Rule 53(1)(i): semi and row both cover 125-225 sq m. Detached needs frontage strictly above 12,
+  so a 300 sq m plot with exactly 12 m frontage fails detached and fits semi/row by frontage only.
+- Amendment: the 2(5)(c) quote and page 3 are correct. The 28 Aug 2026 "plots up to 500 sq m" change
+  comes from an outside source and is not in the rulebook text, so the check stays a `warn` only.
+- eval_cases.json: all 16 engine expectations match the tables. Ask answers for q1, q2, q3, q4, q5,
+  q10, q12 and q14 match the rule text. q13: Rule 83 requires lifts above 12.5 m (the question
+  says 15 m, which is fine). Counts for F3: engine 16, ask 17, expectFound 15.
+
+F1 decisions:
+- DECISION: fee eval cases e8-e11 now expect the total (slab + application fee, e.g. 75 sq m -> 825) because
+  `amountRs` is the total and F3 scores engine cases straight from `runChecks`.
+- DECISION: side check also warns (no check) above 12.5 m, because Rule 56(3) sits under "open spaces for
+  buildings up to 12.5 m" and 56(5) sends taller buildings to Rule 42, the same as front and rear.
+- DECISION: added to `tables.json`: `frontOpenSpace.narrowStreet` (56(1)(b)), `plotType.ewsLig` (53(1)(ii)),
+  `residentialPermissionFee.highRise` (2(38), p.8, > 30 m), `residentialPermissionFee.otherUses` (50% surcharge)
+  and `amendments[0].messageHi`, so checks cite real quotes and hardcode no numbers. All quotes checked on the PDF.
+- DECISION: `missing` checks return `refs: []`. plotType passes on plot size alone when frontage is not given,
+  with a "frontage not checked" note. Detached with only one side given: `fail` if that side is already too
+  small, otherwise `info`.
+- DECISION: high-rise (> 30 m) fee is a `warn` with no `amountRs`, because the 21(3)(c) rates are not in the tables.
+
 ## Done log
 
 (time · task · one line)
+
+16:09 · F0 · checked tables.json and eval_cases.json against rules text: numbers OK, 3 engine decisions logged
+16:20 · F0 · re-checked against the official PDF in docs/: all numbers and 32 quotes match their pages
+16:25 · F1 · rules engine: 7 checks + tables/lookup/ref/text helpers, 32 tests passing, demo case matches S5

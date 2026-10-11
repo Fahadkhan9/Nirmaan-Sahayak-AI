@@ -32,7 +32,15 @@
         "valueM": 6.0,
         "quote": "4. Above 18 meters 6.0 meters"
       }
-    ]
+    ],
+    "narrowStreet": {
+      "rule": "56(1)(b)",
+      "ruleId": "56",
+      "page": 77,
+      "streetBelowM": 6,
+      "buildingLineFromCentreM": 6,
+      "quote": "In existing developed areas with streets less than 6.0 meters in width, the distances of the building (building line) shall be at 6.0 meters from the center line of the street."
+    }
   },
   "rearOpenSpace": {
     "rule": "56(2)(a)",
@@ -124,6 +132,12 @@
       "frontageMin": 4.5,
       "frontageMax": 12,
       "quote": "Row type building 50-225 4.5 to 12"
+    },
+    "ewsLig": {
+      "rule": "53(1)(ii)",
+      "ruleId": "53",
+      "page": 70,
+      "quote": "the norms of plot size for EWS/ LIG shall be as provided in Appendix-J."
     }
   },
   "applicationFee": {
@@ -219,7 +233,21 @@
         "feeRs": 50000,
         "quote": "above 2500 50,000"
       }
-    ]
+    ],
+    "highRise": {
+      "rule": "2(38)",
+      "ruleId": "2",
+      "page": 8,
+      "heightAboveM": 30,
+      "quote": "which has a height of more than 30 meters"
+    },
+    "otherUses": {
+      "rule": "21(3)(b)",
+      "ruleId": "21",
+      "page": 36,
+      "surchargePct": 50,
+      "quote": "together with an additional charge of 50% of such amount of fees."
+    }
   },
   "amendments": [
     {
@@ -231,6 +259,7 @@
         "plotAreaSqmMaxInclusive": 500
       },
       "message": "Rule 2(5)(c) for plots up to 500 sq m was amended on 28 August 2026. This tool uses rules up to 6 March 2025. Verify with the latest notification.",
+      "messageHi": "500 वर्ग मीटर तक के प्लॉट के लिए नियम 2(5)(c) में 28 अगस्त 2026 को बदलाव हुआ है। यह टूल 6 मार्च 2025 तक के नियमों पर चलता है। नई अधिसूचना से जांच लें।",
       "source": "https://teamleaseregtech.com/updates/article/59469/government-of-madhya-pradesh-amendment-to-land-development-rules",
       "page": 3,
       "quote": "The land is already developed in the Central area of the adopted Development Plan"
