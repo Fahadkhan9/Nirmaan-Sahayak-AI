@@ -61,7 +61,7 @@ Total budget about 60 minutes. Times are targets, not limits. If a task overruns
 - `components/version-banner.tsx` (server component): `RULES_VERSION` + "Guidance only. The officer decides."
   in both languages.
 
-- [ ] S1 done
+- [x] S1 done
 
 ## S2. Rulebook and quote verifier (T+15 to T+22)
 
@@ -80,7 +80,7 @@ Total budget about 60 minutes. Times are targets, not limits. If a task overruns
 - `lib/rules/verify.test.ts`: one true case (a row from `data/tables.json`), one false case (made-up text),
   one "wrong rule id" case.
 
-- [ ] S2 done
+- [x] S2 done
 
 ## S3. Claude pipeline (T+22 to T+35)
 
@@ -235,3 +235,6 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 ## Done log
 
 (time · task · one line)
+
+16:01 · S1 · `lib/strings.ts` (bilingual labels), Card, RulePill, StatusIcon, NumberField, VersionBanner.
+16:12 · S2 · `lib/rules/rulebook.ts`, `verifyQuote` + 8 tests; vitest config renamed to `.mts` (ESM warning).
