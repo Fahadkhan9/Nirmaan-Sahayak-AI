@@ -188,7 +188,7 @@ small client form calling a server action that sets the cookie (httpOnly, sameSi
 `app/actions/hindi.ts`: `"use server"`; `getHindiPageAction(page)` returns `getHindiPage(page)`.
 Never send the whole Hindi JSON to the browser.
 
-- [ ] S7 done
+- [x] S7 done
 
 ## S8. Print slip (stretch, 5 min)
 
@@ -244,3 +244,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 16:12 · S2 · `lib/rules/rulebook.ts`, `verifyQuote` + 8 tests; vitest config renamed to `.mts` (ESM warning).
 16:42 · S0 fix · lockfile regenerated (missing @emnapi entries broke `npm ci`); `typecheck` runs `next typegen` first (Fahad requests).
 16:47 · S3 · Claude pipeline: extract + answer (rulebook cached), runAsk, askAction, 10 tests. Not live-tested (no key here).
+16:47 · S7 · `getHindiPageAction(page)` server action (validates page, one page per call).
