@@ -1,0 +1,239 @@
+{
+  "rulesVersion": "MP Bhumi Vikas Rules 2012, consolidated to 6 March 2025",
+  "source": "https://mptownplan.gov.in/NewsPDF/bvn06032025E.pdf",
+  "frontOpenSpace": {
+    "rule": "56(1)(a)",
+    "ruleId": "56",
+    "page": 77,
+    "appliesUpToHeightM": 12.5,
+    "basis": "streetWidthM",
+    "rows": [
+      {
+        "minExclusive": null,
+        "maxInclusive": 9,
+        "valueM": 3.0,
+        "quote": "1. Up to 9.0 meters 3.0 meters"
+      },
+      {
+        "minExclusive": 9,
+        "maxInclusive": 12,
+        "valueM": 3.6,
+        "quote": "2. More than 9.0 meters and up to 12 meters 3.6 meters"
+      },
+      {
+        "minExclusive": 12,
+        "maxInclusive": 18,
+        "valueM": 4.5,
+        "quote": "3. More than 12.0 meters and up to 18 meters 4.5 meters"
+      },
+      {
+        "minExclusive": 18,
+        "maxInclusive": null,
+        "valueM": 6.0,
+        "quote": "4. Above 18 meters 6.0 meters"
+      }
+    ]
+  },
+  "rearOpenSpace": {
+    "rule": "56(2)(a)",
+    "ruleId": "56",
+    "page": 78,
+    "appliesUpToHeightM": 12.5,
+    "basis": "plotAreaSqm",
+    "rows": [
+      {
+        "minExclusive": null,
+        "maxInclusive": 40,
+        "valueM": 0,
+        "quote": "1. Up to 40.00 Nil"
+      },
+      {
+        "minExclusive": 40,
+        "maxInclusive": 150,
+        "valueM": 1.5,
+        "quote": "2. Above 40.00 and up to 150.00 1.50"
+      },
+      {
+        "minExclusive": 150,
+        "maxInclusive": 225,
+        "valueM": 2.5,
+        "quote": "3. Above 150 and up to 225.00 2.50"
+      },
+      {
+        "minExclusive": 225,
+        "maxInclusive": null,
+        "valueM": 3.0,
+        "quote": "4. Above 225.00 3.00"
+      }
+    ]
+  },
+  "sideOpenSpace": {
+    "rule": "56(3)",
+    "ruleId": "56",
+    "page": 78,
+    "detached": {
+      "bothSidesM": 3.0,
+      "quote": "For detached buildings there shall be minimum side open spaces of 3 meters on both the sides",
+      "relaxation": {
+        "maxHeightM": 7,
+        "frontageLessThanM": 12,
+        "oneSideM": 1.5,
+        "quote": "Provided that for detached residential building up to 7 meters in height on plots with a frontage less than 12 meters, one of the sides open space may be reduced to 1.5 meters."
+      }
+    },
+    "semi": {
+      "oneSideM": 3.0,
+      "quote": "For semi-detached building there shall be a minimum side open space of 3.0 meters on one side.",
+      "relaxation": {
+        "maxHeightM": 10,
+        "maxFrontageM": 10,
+        "oneSideM": 2.5,
+        "quote": "For Semi-detached building up to 10 meters in height on plots with a frontage up to 10 meters, the side open space may be reduced to 2.5 meters."
+      }
+    },
+    "row": {
+      "quote": "For row-type buildings, no side open space is required."
+    }
+  },
+  "tallBuilding": {
+    "rule": "56(5)",
+    "ruleId": "56",
+    "page": 78,
+    "thresholdM": 12.5,
+    "quote": "For building of height above 12.5 meters the open spaces around building shall be as given in Table 4 and 5 of Rule 42."
+  },
+  "plotType": {
+    "rule": "53(1)(i)",
+    "ruleId": "53",
+    "page": 70,
+    "detached": {
+      "plotMinExclusive": 225,
+      "frontageMinExclusive": 12,
+      "quote": "Detached building above 225 above 12"
+    },
+    "semi": {
+      "plotMin": 125,
+      "plotMax": 225,
+      "frontageMin": 8,
+      "frontageMax": 12,
+      "quote": "Semi-detached building 125-225 8 to 12"
+    },
+    "row": {
+      "plotMin": 50,
+      "plotMax": 225,
+      "frontageMin": 4.5,
+      "frontageMax": 12,
+      "quote": "Row type building 50-225 4.5 to 12"
+    }
+  },
+  "applicationFee": {
+    "rule": "21(2)(ii)",
+    "ruleId": "21",
+    "page": 35,
+    "rsPerSqmBuiltUp": 1.0,
+    "quote": "(ii) for the Building Permission Rs 1.00 per Square meter of the proposed built- up area."
+  },
+  "residentialPermissionFee": {
+    "rule": "21(3)(b)",
+    "ruleId": "21",
+    "page": 36,
+    "basis": "builtUpAreaSqm",
+    "header": "(b) In case of a building permission (other than high rise buildings)",
+    "assumption": "Slabs are read as continuous: a value above one slab's upper limit falls in the next slab (e.g. 75.5 sq m uses the 76-125 slab).",
+    "rows": [
+      {
+        "minExclusive": null,
+        "maxInclusive": 75,
+        "feeRs": 750,
+        "quote": "0 75 750"
+      },
+      {
+        "minExclusive": 75,
+        "maxInclusive": 125,
+        "feeRs": 1250,
+        "quote": "76 125 1,250"
+      },
+      {
+        "minExclusive": 125,
+        "maxInclusive": 200,
+        "feeRs": 2000,
+        "quote": "126 200 2,000"
+      },
+      {
+        "minExclusive": 200,
+        "maxInclusive": 300,
+        "feeRs": 3000,
+        "quote": "201 300 3,000"
+      },
+      {
+        "minExclusive": 300,
+        "maxInclusive": 400,
+        "feeRs": 4000,
+        "quote": "301 400 4,000"
+      },
+      {
+        "minExclusive": 400,
+        "maxInclusive": 600,
+        "feeRs": 6000,
+        "quote": "401 600 6,000"
+      },
+      {
+        "minExclusive": 600,
+        "maxInclusive": 750,
+        "feeRs": 7500,
+        "quote": "601 750 7,500"
+      },
+      {
+        "minExclusive": 750,
+        "maxInclusive": 1000,
+        "feeRs": 10000,
+        "quote": "751 1,000 10,000"
+      },
+      {
+        "minExclusive": 1000,
+        "maxInclusive": 1250,
+        "feeRs": 12500,
+        "quote": "1,001 1,250 12,500"
+      },
+      {
+        "minExclusive": 1250,
+        "maxInclusive": 1500,
+        "feeRs": 15000,
+        "quote": "1,251 1,500 15,000"
+      },
+      {
+        "minExclusive": 1500,
+        "maxInclusive": 2000,
+        "feeRs": 20000,
+        "quote": "1,501 2,000 20,000"
+      },
+      {
+        "minExclusive": 2000,
+        "maxInclusive": 2500,
+        "feeRs": 25000,
+        "quote": "2,001 2,500 25,000"
+      },
+      {
+        "minExclusive": 2500,
+        "maxInclusive": null,
+        "feeRs": 50000,
+        "quote": "above 2500 50,000"
+      }
+    ]
+  },
+  "amendments": [
+    {
+      "id": "2026-08-28-rule-2-5-c",
+      "rule": "2(5)(c)",
+      "ruleId": "2",
+      "date": "2026-08-28",
+      "appliesWhen": {
+        "plotAreaSqmMaxInclusive": 500
+      },
+      "message": "Rule 2(5)(c) for plots up to 500 sq m was amended on 28 August 2026. This tool uses rules up to 6 March 2025. Verify with the latest notification.",
+      "source": "https://teamleaseregtech.com/updates/article/59469/government-of-madhya-pradesh-amendment-to-land-development-rules",
+      "page": 3,
+      "quote": "The land is already developed in the Central area of the adopted Development Plan"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "askCases": [
+    {
+      "id": "q1",
+      "lang": "en",
+      "question": "My house faces a 10 m wide street and will be 9 m tall. How much open space do I leave at the front?",
+      "expectFound": true,
+      "acceptRules": [
+        "56"
+      ],
+      "expectValue": "3.6"
+    },
+    {
+      "id": "q2",
+      "lang": "en",
+      "question": "I want a farm house on agricultural land. What is the minimum plot size and the maximum FAR?",
+      "expectFound": true,
+      "acceptRules": [
+        "17"
+      ],
+      "expectValue": "0.40 hectare; FAR 0.10"
+    },
+    {
+      "id": "q3",
+      "lang": "en",
+      "question": "My development permission was granted in 2023. How long does it stay valid, and how many times can I renew it?",
+      "expectFound": true,
+      "acceptRules": [
+        "23"
+      ],
+      "expectValue": "3 years; 2 revalidations of 1 year each"
+    },
+    {
+      "id": "q4",
+      "lang": "en",
+      "question": "I applied for building permission and the authority has not replied. What happens if they miss the deadline?",
+      "expectFound": true,
+      "acceptRules": [
+        "28"
+      ],
+      "expectValue": "deemed sanctioned"
+    },
+    {
+      "id": "q5",
+      "lang": "en",
+      "question": "How far must my balcony stay from a low-voltage overhead electric line, vertically and horizontally?",
+      "expectFound": true,
+      "acceptRules": [
+        "52"
+      ],
+      "expectValue": "2.5 m vertical, 1.2 m horizontal"
+    },
+    {
+      "id": "q6",
+      "lang": "en",
+      "question": "Who is allowed to sign and submit my building plans?",
+      "expectFound": true,
+      "acceptRules": [
+        "18",
+        "26"
+      ],
+      "expectValue": ""
+    },
+    {
+      "id": "q7",
+      "lang": "en",
+      "question": "What documents go with an application for building permission?",
+      "expectFound": true,
+      "acceptRules": [
+        "16",
+        "14"
+      ],
+      "expectValue": ""
+    },
+    {
+      "id": "q8",
+      "lang": "en",
+      "question": "What is the fee for building permission for a residential house?",
+      "expectFound": true,
+      "acceptRules": [
+        "21"
+      ],
+      "expectValue": "slab by built-up area + Rs 1 per sq m application fee"
+    },
+    {
+      "id": "q9",
+      "lang": "en",
+      "question": "Can I change my plan after it is sanctioned?",
+      "expectFound": true,
+      "acceptRules": [
+        "24",
+        "19"
+      ],
+      "expectValue": ""
+    },
+    {
+      "id": "q10",
+      "lang": "en",
+      "question": "What is the minimum rear open space for a 150 sq m residential plot?",
+      "expectFound": true,
+      "acceptRules": [
+        "56"
+      ],
+      "expectValue": "1.5"
+    },
+    {
+      "id": "q11",
+      "lang": "en",
+      "question": "Do I need separate development permission for a 300 sq m plot that matches the Development Plan?",
+      "expectFound": true,
+      "acceptRules": [
+        "2",
+        "12"
+      ],
+      "expectValue": "must show amendment warning (28 Aug 2026)"
+    },
+    {
+      "id": "q12",
+      "lang": "en",
+      "question": "Which rule decides what happens when the Development Plan and these rules disagree?",
+      "expectFound": true,
+      "acceptRules": [
+        "103"
+      ],
+      "expectValue": ""
+    },
+    {
+      "id": "q13",
+      "lang": "en",
+      "question": "What are the rules for lifts in a building taller than 15 m?",
+      "expectFound": true,
+      "acceptRules": [
+        "83",
+        "42"
+      ],
+      "expectValue": ""
+    },
+    {
+      "id": "q14",
+      "lang": "hi",
+      "question": "मेरा प्लॉट 200 वर्ग मीटर का है और सामने 9 मीटर चौड़ी सड़क है। आगे कितनी जगह खाली छोड़नी होगी?",
+      "expectFound": true,
+      "acceptRules": [
+        "56"
+      ],
+      "expectValue": "3.0"
+    },
+    {
+      "id": "q15",
+      "lang": "hi",
+      "question": "बिल्डिंग परमिशन की फीस कितनी है और किस नियम में लिखी है?",
+      "expectFound": true,
+      "acceptRules": [
+        "21"
+      ],
+      "expectValue": ""
+    },
+    {
+      "id": "q16",
+      "lang": "en",
+      "question": "How do I pay my property tax online?",
+      "expectFound": false,
+      "acceptRules": [],
+      "expectValue": ""
+    },
+    {
+      "id": "q17",
+      "lang": "en",
+      "question": "What is the current market rate for land in Kolar Road, Bhopal?",
+      "expectFound": false,
+      "acceptRules": [],
+      "expectValue": ""
+    }
+  ],
+  "engineCases": [
+    {
+      "id": "e1",
+      "note": "street exactly 9 m",
+      "input": {
+        "streetWidth": 9
+      },
+      "check": "front",
+      "expectRequiredM": 3.0
+    },
+    {
+      "id": "e2",
+      "note": "street 9.1 m",
+      "input": {
+        "streetWidth": 9.1
+      },
+      "check": "front",
+      "expectRequiredM": 3.6
+    },
+    {
+      "id": "e3",
+      "note": "street 18 m",
+      "input": {
+        "streetWidth": 18
+      },
+      "check": "front",
+      "expectRequiredM": 4.5
+    },
+    {
+      "id": "e4",
+      "note": "plot exactly 150",
+      "input": {
+        "plotArea": 150
+      },
+      "check": "rear",
+      "expectRequiredM": 1.5
+    },
+    {
+      "id": "e5",
+      "note": "plot 150.5",
+      "input": {
+        "plotArea": 150.5
+      },
+      "check": "rear",
+      "expectRequiredM": 2.5
+    },
+    {
+      "id": "e6",
+      "note": "plot 225",
+      "input": {
+        "plotArea": 225
+      },
+      "check": "rear",
+      "expectRequiredM": 2.5
+    },
+    {
+      "id": "e7",
+      "note": "plot 40",
+      "input": {
+        "plotArea": 40
+      },
+      "check": "rear",
+      "expectRequiredM": 0
+    },
+    {
+      "id": "e8",
+      "note": "built-up 75",
+      "input": {
+        "builtUpArea": 75
+      },
+      "check": "fee",
+      "expectFeeRs": 750
+    },
+    {
+      "id": "e9",
+      "note": "built-up 75.5 (gap, continuous reading)",
+      "input": {
+        "builtUpArea": 75.5
+      },
+      "check": "fee",
+      "expectFeeRs": 1250
+    },
+    {
+      "id": "e10",
+      "note": "built-up 200",
+      "input": {
+        "builtUpArea": 200
+      },
+      "check": "fee",
+      "expectFeeRs": 2000
+    },
+    {
+      "id": "e11",
+      "note": "built-up 2600",
+      "input": {
+        "builtUpArea": 2600
+      },
+      "check": "fee",
+      "expectFeeRs": 50000
+    },
+    {
+      "id": "e12",
+      "note": "semi, h10, frontage 10 -> 2.5",
+      "input": {
+        "buildingType": "semi",
+        "height": 10,
+        "frontage": 10
+      },
+      "check": "side",
+      "expectRequiredM": 2.5
+    },
+    {
+      "id": "e13",
+      "note": "semi, h10.5 -> 3.0",
+      "input": {
+        "buildingType": "semi",
+        "height": 10.5,
+        "frontage": 10
+      },
+      "check": "side",
+      "expectRequiredM": 3.0
+    },
+    {
+      "id": "e14",
+      "note": "height 13 -> warn Rule 42",
+      "input": {
+        "height": 13
+      },
+      "check": "height",
+      "expectStatus": "warn"
+    },
+    {
+      "id": "e15",
+      "note": "plot 300 -> amendment warn",
+      "input": {
+        "plotArea": 300
+      },
+      "check": "amendment",
+      "expectStatus": "warn"
+    },
+    {
+      "id": "e16",
+      "note": "demo case: 200 sqm, rear 1.5 -> fail",
+      "input": {
+        "plotArea": 200,
+        "rear": 1.5
+      },
+      "check": "rear",
+      "expectStatus": "fail"
+    }
+  ]
+}
