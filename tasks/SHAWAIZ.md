@@ -162,7 +162,7 @@ Client components in `components/workspace/`:
 - Layout: input on top, then two columns on wide screens (form left, results right), one column on mobile.
   Clean, flat, plenty of whitespace, readable at arm's length (base text 16px).
 
-- [ ] S4 done
+- [x] S4 done
 
 ## S5. Integrate, deploy, smoke test (T+40 to T+48)
 
@@ -245,3 +245,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 16:42 · S0 fix · lockfile regenerated (missing @emnapi entries broke `npm ci`); `typecheck` runs `next typegen` first (Fahad requests).
 16:47 · S3 · Claude pipeline: extract + answer (rulebook cached), runAsk, askAction, 10 tests. Not live-tested (no key here).
 16:47 · S7 · `getHindiPageAction(page)` server action (validates page, one page per call).
+16:49 · S4 · Workspace UI: ask box, plan form, summary tiles, sorted check list, quote block + Hindi text, answer card; light theme.

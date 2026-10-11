@@ -79,6 +79,12 @@ export const strings = {
     rule: { hi: "नियम", en: "Rule" },
     page: { hi: "पृष्ठ", en: "p." },
   },
+  sections: {
+    plan: { hi: "योजना विवरण", en: "Plan details" },
+    checks: { hi: "नियम जाँच", en: "Rule checks" },
+    answer: { hi: "नियम उत्तर", en: "Rule answer" },
+    ask: { hi: "नागरिक की योजना या प्रश्न", en: "Citizen's plan or question" },
+  },
   answer: {
     notFound: { hi: "नियमों में नहीं मिला", en: "Not found in the rules" },
     verified: { hi: "सत्यापित", en: "Verified" },
@@ -97,6 +103,7 @@ export const strings = {
     checking: { hi: "जाँच हो रही है…", en: "Checking…" },
     newCitizen: { hi: "नया नागरिक", en: "New citizen" },
     select: { hi: "चुनें", en: "Select" },
+    submitHint: { hi: "Ctrl/⌘ + Enter से भेजें", en: "Ctrl/⌘ + Enter to send" },
   },
   placeholders: {
     ask: {
@@ -107,6 +114,8 @@ export const strings = {
   hindiText: {
     summary: { hi: "आधिकारिक हिंदी पाठ", en: "Official Hindi text" },
     autoConverted: { hi: "स्वतः परिवर्तित, PDF से मिलाएँ", en: "Auto-converted, check the PDF" },
+    notAvailable: { hi: "इस पृष्ठ का हिंदी पाठ उपलब्ध नहीं", en: "Hindi text not available for this page" },
+    loading: { hi: "लोड हो रहा है…", en: "Loading…" },
   },
   errors: {
     noAiKey: {
