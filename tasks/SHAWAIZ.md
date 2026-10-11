@@ -138,7 +138,7 @@ No `server-only` import here (the eval script uses it).
 **app/actions/ask.ts**: `"use server"`; `export async function askAction(text: string): Promise<AskResult>`
 calls `runAsk`. If `!hasAiKey()` return an error telling the clerk to use the form directly.
 
-- [ ] S3 done
+- [x] S3 done
 
 ## S4. Workspace UI (T+15 to T+40, build in parallel with S2 and S3 using the engine stub)
 
@@ -162,7 +162,7 @@ Client components in `components/workspace/`:
 - Layout: input on top, then two columns on wide screens (form left, results right), one column on mobile.
   Clean, flat, plenty of whitespace, readable at arm's length (base text 16px).
 
-- [ ] S4 done
+- [x] S4 done
 
 ## S5. Integrate, deploy, smoke test (T+40 to T+48)
 
@@ -181,14 +181,14 @@ Client components in `components/workspace/`:
 Else, if cookie `ns_access` !== `ACCESS_CODE`, redirect to `/access`. `app/access/page.tsx` (server) with a
 small client form calling a server action that sets the cookie (httpOnly, sameSite lax, 12 h) and redirects to `/`.
 
-- [ ] S6 done
+- [x] S6 done
 
 ## S7. Hindi official text (should, 5 min, needs Fahad's F3)
 
 `app/actions/hindi.ts`: `"use server"`; `getHindiPageAction(page)` returns `getHindiPage(page)`.
 Never send the whole Hindi JSON to the browser.
 
-- [ ] S7 done
+- [x] S7 done
 
 ## S8. Print slip (stretch, 5 min)
 
@@ -196,7 +196,7 @@ Never send the whole Hindi JSON to the browser.
 with reference ID (`NS-` + yyyymmdd-hhmmss), the inputs, the checklist, rules version, and
 "Guidance only. The officer decides."
 
-- [ ] S8 done
+- [x] S8 done
 
 ## S9. Neon history (stretch, only if S5 to S8 are done)
 
@@ -230,6 +230,10 @@ DECISION: vitest `passWithNoTests: true` because `npm test` must pass before the
 DECISION: eslint allows `_`-prefixed unused args because the stubs keep the shared signatures.
 DECISION: git flow is feature branch -> `develop` -> `main` via PRs (no direct commits to either) because
 Shawaiz wants reviewed merges and a stable `main`. S0 goes in as a PR from `feature/s0-setup`.
+DECISION: S3 uses structured outputs (`messages.parse` + zod) instead of forced `tool_choice`, because claude-sonnet-5-5 rejects forced tool use with a 400.
+DECISION: S3 extract returns value + unit; code converts ft/sq ft/gaj to metres, because Claude never does maths (CLAUDE.md section 4).
+DECISION: S3 max_tokens 2000/4000 with effort low/medium, because the model always thinks and 500/800 could cut answers off.
+DECISION: S3 sends server-side refusal fallback (`fallbacks: "default"`) on models that support it.
 DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigravity) to CLAUDE.md.
 
 ## Done log
@@ -238,3 +242,9 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 
 16:01 · S1 · `lib/strings.ts` (bilingual labels), Card, RulePill, StatusIcon, NumberField, VersionBanner.
 16:12 · S2 · `lib/rules/rulebook.ts`, `verifyQuote` + 8 tests; vitest config renamed to `.mts` (ESM warning).
+16:42 · S0 fix · lockfile regenerated (missing @emnapi entries broke `npm ci`); `typecheck` runs `next typegen` first (Fahad requests).
+16:47 · S3 · Claude pipeline: extract + answer (rulebook cached), runAsk, askAction, 10 tests. Not live-tested (no key here).
+16:47 · S7 · `getHindiPageAction(page)` server action (validates page, one page per call).
+16:49 · S4 · Workspace UI: ask box, plan form, summary tiles, sorted check list, quote block + Hindi text, answer card; light theme.
+16:50 · S6 · Access code: `proxy.ts` (Next 16 name for middleware), /access page, httpOnly 12 h cookie. Tested with and without ACCESS_CODE.
+16:50 · S8 · Print slip: button + NS-yyyymmdd-hhmmss reference on paper; input box and buttons hidden in print.
