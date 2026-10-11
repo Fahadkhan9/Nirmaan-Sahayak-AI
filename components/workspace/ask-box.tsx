@@ -40,6 +40,19 @@ export function AskBox({ text, onTextChange, onSubmit, onReset, pending, error }
           placeholder={strings.placeholders.ask.hi}
           className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-200"
         />
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="font-medium text-zinc-600">{bi(strings.examples.label)}:</span>
+          {strings.examples.items.map((example) => (
+            <button
+              key={example.label.en}
+              type="button"
+              onClick={() => onTextChange(example.text)}
+              className="rounded-full border border-zinc-300 bg-zinc-50 px-3 py-1 text-zinc-800 hover:bg-zinc-100"
+            >
+              {bi(example.label)}
+            </button>
+          ))}
+        </div>
         <div className="flex flex-wrap items-center gap-3">
           <button
             type="submit"
