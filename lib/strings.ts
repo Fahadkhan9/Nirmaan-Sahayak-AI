@@ -117,5 +117,17 @@ export const strings = {
       hi: "AI से उत्तर नहीं मिला। फ़ॉर्म सीधे भरें।",
       en: "Could not get an AI answer. Fill the form directly.",
     },
+    answerFailed: {
+      hi: "नियम का उत्तर नहीं मिला। योजना की जाँच फिर भी चलेगी।",
+      en: "Could not get a rule answer. The plan check still works.",
+    },
+    emptyInput: {
+      hi: "कृपया प्रश्न या योजना का विवरण लिखें।",
+      en: "Please type a question or plan details.",
+    },
+    tooLong: {
+      hi: "संदेश बहुत लंबा है (अधिकतम 1000 अक्षर)।",
+      en: "Message too long (max 1000 characters).",
+    },
   },
 };

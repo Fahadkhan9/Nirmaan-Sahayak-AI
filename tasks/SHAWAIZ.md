@@ -138,7 +138,7 @@ No `server-only` import here (the eval script uses it).
 **app/actions/ask.ts**: `"use server"`; `export async function askAction(text: string): Promise<AskResult>`
 calls `runAsk`. If `!hasAiKey()` return an error telling the clerk to use the form directly.
 
-- [ ] S3 done
+- [x] S3 done
 
 ## S4. Workspace UI (T+15 to T+40, build in parallel with S2 and S3 using the engine stub)
 
@@ -230,6 +230,10 @@ DECISION: vitest `passWithNoTests: true` because `npm test` must pass before the
 DECISION: eslint allows `_`-prefixed unused args because the stubs keep the shared signatures.
 DECISION: git flow is feature branch -> `develop` -> `main` via PRs (no direct commits to either) because
 Shawaiz wants reviewed merges and a stable `main`. S0 goes in as a PR from `feature/s0-setup`.
+DECISION: S3 uses structured outputs (`messages.parse` + zod) instead of forced `tool_choice`, because claude-sonnet-5-5 rejects forced tool use with a 400.
+DECISION: S3 extract returns value + unit; code converts ft/sq ft/gaj to metres, because Claude never does maths (CLAUDE.md section 4).
+DECISION: S3 max_tokens 2000/4000 with effort low/medium, because the model always thinks and 500/800 could cut answers off.
+DECISION: S3 sends server-side refusal fallback (`fallbacks: "default"`) on models that support it.
 DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigravity) to CLAUDE.md.
 
 ## Done log
@@ -239,3 +243,4 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 16:01 · S1 · `lib/strings.ts` (bilingual labels), Card, RulePill, StatusIcon, NumberField, VersionBanner.
 16:12 · S2 · `lib/rules/rulebook.ts`, `verifyQuote` + 8 tests; vitest config renamed to `.mts` (ESM warning).
 16:42 · S0 fix · lockfile regenerated (missing @emnapi entries broke `npm ci`); `typecheck` runs `next typegen` first (Fahad requests).
+16:47 · S3 · Claude pipeline: extract + answer (rulebook cached), runAsk, askAction, 10 tests. Not live-tested (no key here).
