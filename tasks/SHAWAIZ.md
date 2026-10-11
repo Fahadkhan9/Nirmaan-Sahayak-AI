@@ -61,7 +61,7 @@ Total budget about 60 minutes. Times are targets, not limits. If a task overruns
 - `components/version-banner.tsx` (server component): `RULES_VERSION` + "Guidance only. The officer decides."
   in both languages.
 
-- [ ] S1 done
+- [x] S1 done
 
 ## S2. Rulebook and quote verifier (T+15 to T+22)
 
@@ -235,3 +235,5 @@ DECISION: `AGENTS.md` points every non-Claude agent (Fahad sometimes uses Antigr
 ## Done log
 
 (time · task · one line)
+
+16:01 · S1 · `lib/strings.ts` (bilingual labels), Card, RulePill, StatusIcon, NumberField, VersionBanner.
